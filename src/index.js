@@ -27,7 +27,7 @@ export default async function register(app) {
           [{ name: 1 }, { name: "c2_name" }],
           [{ relatedTagIds: 1 }, { name: "c2_relatedTagIds" }],
           [{ shopId: 1 }, { name: "c2_shopId" }],
-          [{ slug: 1 }, { unique: true }]
+          [{ slug: 1, shopId: 1 }, { unique: true }]
         ]
       }
     },
