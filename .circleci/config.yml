@@ -63,7 +63,10 @@ jobs:
           environment:
             MONGO_URL: mongodb://localhost:27017/test
             MONGO_USE_UNIFIED_TOPOLOGY: false
-          command: npx --quiet --package @reactioncommerce/ci-scripts@1.12.2 run-integration-tests
+          command: |
+            sudo apt-get install -y mongodb
+            mongo --eval "rs.initiate()"
+            npx --quiet --package @reactioncommerce/ci-scripts@1.12.2 run-integration-tests
 
   test:
     docker:
